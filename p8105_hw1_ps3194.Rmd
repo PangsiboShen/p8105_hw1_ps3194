@@ -32,7 +32,7 @@ mean(pull(prob1_df, samp_gt_0))
 mean(pull(prob1_df, char_vec))
 mean(pull(prob1_df, factor_vec))
 ```
-#### answer:
+#### Answer:
 
 I can take the mean of numbers and logical but not character or factor.
 
@@ -42,7 +42,7 @@ as.numeric(pull(prob1_df, samp_gt_0))
 as.numeric(pull(prob1_df, char_vec))
 as.numeric(pull(prob1_df, factor_vec))
 ```
-#### answer:
+#### Answer:
 
 I can't convert character into numeric. By converting logical to numeric, TRUE has value of 1 and FALSE has value of 0. For factors, the conversion assigns numeric value to each data point by their levels. 
 
@@ -54,16 +54,16 @@ as.numeric(as.factor(pull(prob1_df,samp_gt_0)))*prob1_df$samp
 
 ## Problem 2
 
-#### install and load penguins dataset
+#### Install and load penguins dataset
 ```{r load penguins}
 data("penguins", package = "palmerpenguins")
 ```
 
-#### short description of the penguins dataset
+#### Short description of the penguins dataset
 
 The penguins dataset has *`r nrow(penguins)`* rows and *`r ncol(penguins)`* columns. Column names are *`r names(penguins)`*. There are *`r levels(pull(penguins, species))`* for species and they live on islands like *`r levels(pull(penguins, island))`*. The mean bill depth is *`r mean(pull(penguins, bill_depth_mm), na.rm =TRUE)`* mm. The mean bill length is *`r mean(pull(penguins, bill_length_mm), na.rm =TRUE)`* mm. The mean flipper length is *`r mean(pull(penguins, flipper_length_mm), na.rm =TRUE)`* mm. The mean body mass is *`r mean(pull(penguins, body_mass_g), na.rm =TRUE)`* g. The data was recorded between year *`r range(pull(penguins, year))`*. 
 
-#### scatterplot of bill length vs flipper length and export
+#### Scatterplot of bill length vs flipper length and export
 
 ```{r scatterplot}
 ggplot(penguins,aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
